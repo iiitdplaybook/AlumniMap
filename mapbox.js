@@ -2,17 +2,155 @@ mapboxgl.accessToken =
   "pk.eyJ1Ijoic3BhY3NwYWRlIiwiYSI6ImNsOHJnZ2ZreTA5M2kzeXBjZjd6dGFiNGEifQ.qT1yNywVrDbqC4-wyZcsbg";
 const people = [
   {
-    name: "{Name}",
-    location: "{City}, {Country}",
-    batch: "{Grad'18}",
-    coordinates: [-70, -20],
-    image: "url('Assets/Profiles/AneeshaLakra.jpeg')",
+    name: "Aneesha Lakra",
+    location: "Seattle, USA",
+    batch: "Grad'22",
+    coordinates: [-122.330062, 47.603832],
+    image: "Assets/Profiles/AneeshaLakra.jpeg",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    linkedin: "false",
-    twitter: "false",
-    instagram: "https://www.instagram.com/",
-    email: "false",
+      " is a Masters student at University of Washington since September 28, 2022",
+    linkedin: "https://www.linkedin.com/in/aneeshalakra",
+    twitter: "",
+    instagram: "",
+    email: "",
+  },
+  {
+    name: "Navneet Agarwal",
+    location: "Gurgaon, India",
+    batch: "Grad'22",
+    coordinates: [77.029919, 28.464615],
+    image: "Assets/Profiles/NavneetAgarwal.jpg",
+    description: " is a Software Developer at Adobe since July 19, 2022",
+    linkedin: "",
+    twitter: "navneetagarwal_",
+    instagram: "",
+    email: "",
+  },
+  {
+    name: "Himanshu Raj",
+    location: "Dublin, Ireland",
+    batch: "Grad'22",
+    coordinates: [-6.26583, 53.3425],
+    image: "Assets/Profiles/HimanshuRaj.jpeg",
+    description: " is a Software Engineer at Google since July 19, 2022",
+    linkedin: "",
+    twitter: "",
+    instagram: "himanshu.raj18",
+    email: "",
+  },
+  {
+    name: "Raghav Gupta",
+    location: "London, UK",
+    batch: "Grad'22",
+    coordinates: [-0.127647, 51.507322],
+    image: "Assets/Profiles/RaghavGupta.jpg",
+    description:
+      " is a Software Engineer at Hudson River Trading since August 15, 2022",
+    linkedin: "",
+    twitter: "",
+    instagram: "",
+    email: "raghav18076@iiitd.ac.in",
+  },
+  {
+    name: "Sahil Yadav",
+    location: "Delhi, India",
+    batch: "Grad'22",
+    coordinates: [77.21667, 28.66667],
+    image: "Assets/Profiles/SahilYadav.jpeg",
+    description:
+      " is a 2D FX animator at Vaanarsena Studios since September 9, 2020",
+    linkedin: "https://www.linkedin.com/in/sahilartfusion/",
+    twitter: "sahilartfusion",
+    instagram: "sahilartfusion",
+    email: "sahilartfusion@gmail.com",
+  },
+  {
+    name: "Smera Goel",
+    location: "Berlin, Germany",
+    batch: "Grad'22",
+    coordinates: [13.38333, 52.51667],
+    image: "Assets/Profiles/SmeraGoel.jpeg",
+    description: " is a Product Designer at Jolocom since January 5, 2022",
+    linkedin: "",
+    twitter: "",
+    instagram: "smeragoel",
+    email: "smera18315@iiitd.ac.in",
+  },
+  {
+    name: "Kshitij Agrawal",
+    location: "London, UK",
+    batch: "Grad'22",
+    coordinates: [-0.127647, 51.507322],
+    image: "Assets/Profiles/KshitijAgrawal.png",
+    description: " is a Design Analyst at JP Morgan since September 12, 2022",
+    linkedin: "",
+    twitter: "imkshitij16",
+    instagram: "okkshitij",
+    email: "kshitij18292@iiitd.ac.in",
+  },
+  {
+    name: "Vishesh Agrawal",
+    location: "Los Angeles, USA",
+    batch: "Grad'22",
+    coordinates: [-118.242766, 34.053691],
+    image: "Assets/Profiles/VisheshAgrawal.jpg",
+    description:
+      " is a Master's Student in CS (Artificial Intelligence) at University of Southern California since August 8, 2022",
+    linkedin: "https://www.linkedin.com/in/visheshagrawal03/",
+    twitter: "iamvisheshag",
+    instagram: "vishesh_38",
+    email: "vishesh18420@iiitd.ac.in",
+  },
+  {
+    name: "Anushka Bhandari",
+    location: "Amsterdam, Netherlands",
+    batch: "Grad'22",
+    coordinates: [4.893604, 52.37276],
+    image: "Assets/Profiles/AnushkaBhandari.jpg",
+    description:
+      " is a Software Engineer at Databricks since September 5, 2020",
+    linkedin: "https://www.linkedin.com/in/anushkabhandari45/",
+    twitter: "AnushkaB_",
+    instagram: "anushkabhandari_",
+    email: "anushka.bhandari45@gmail.com",
+  },
+  {
+    name: "Arpit Bhatia",
+    location: "Copenhagen, Denmark",
+    batch: "Grad'22",
+    coordinates: [12.570072, 55.686724],
+    image: "Assets/Profiles/ArpitBhatia.png",
+    description:
+      " is a PhD student at University of Copenhagen since October 11, 2021",
+    linkedin: "https://www.linkedin.com/in/arpit-bhatia",
+    twitter: "ArpitBhtia",
+    instagram: "arpitbhtia",
+    email: "arpitmail20@gmail.com",
+  },
+  {
+    name: "Anshul Mendiratta",
+    location: "Texas, United States",
+    batch: "Grad'22",
+    coordinates: [-94.917549, 29.396013],
+    image: "Assets/Profiles/AnshulMendiratta.jpg",
+    description: " is a PhD student at Texas A&M since August 20, 2022",
+    linkedin: "",
+    twitter: "",
+    instagram: "_drigil_",
+    email: "anshulmendiratta10@gmail.com",
+  },
+  {
+    name: "Sejal Bhalla",
+    location: "Toronto, Canada",
+    batch: "Grad'22",
+    coordinates: [-79.383935, 43.653482],
+    image: "Assets/Profiles/SejalBhalla.jpeg",
+    description:
+      " is a PhD student at University of Toronto since September 10, 2021",
+    linkedin: "https://www.linkedin.com/in/sejal-bhalla",
+    twitter: "",
+    instagram: "",
+    email: "sejal@cs.toronto.edu",
   },
 ];
 let features = [];
@@ -25,16 +163,35 @@ people.forEach((person) => {
         person.image +
         ' height="20px" width="20px" style="border-radius: 50%; margin-right: 2%"><strong style="font-size:12px">' +
         person.name +
-        "</strong></div>" +
+        '</strong></div><div style="margin-top: 2%">' +
         person.location +
         " | " +
         person.batch +
-        '<p style="margin-bottom: 0">' +
+        '</div><p style="margin-bottom: 0">' +
+        person.name.split(" ", 1) +
         person.description +
-        '</p><a style="text-decoration:none; outline:none; padding: 1%; margin-top: 5%; opacity: .7;" target="_blank" href=' +
-        person.instagram +
-        '><img src="https://cdn-icons-png.flaticon.com/512/87/87390.png" height="15px" width="15px" style=""></a>' +
-        "</div>",
+        '</p><div style="display:flex; flex-direction: row; padding: 3%; justify-content:center">' +
+        (person.instagram
+          ? '<a style="text-decoration:none; outline:none; padding: 1%; margin-top: 5%;  margin-right: 10%; margin-left: 10%; opacity: .6;" target="_blank" href="https://instagram.com/' +
+            person.instagram +
+            '"><i class="fa fa-instagram" style="font-size:20px"></i></a>'
+          : "") +
+        (person.linkedin
+          ? '<a style="text-decoration:none; outline:none; padding: 1%; margin-top: 5%; margin-right: 10%; margin-left: 10%; opacity: .5;" target="_blank" href=' +
+            person.linkedin +
+            '><i class="fa fa-linkedin-square" style="font-size:20px"></i></a>'
+          : "") +
+        (person.twitter
+          ? '<a style="text-decoration:none; outline:none; padding: 1%; margin-top: 5%; margin-right: 10%; margin-left: 10%; opacity: .5;" target="_blank" href="https://twitter.com/' +
+            person.twitter +
+            '"><i class="fa fa-twitter" style="font-size:20px"></i></a>'
+          : "") +
+        (person.email
+          ? '<a style="text-decoration:none; outline:none; padding: 1%; margin-top: 5%; margin-right: 10%; margin-left: 10%; opacity: .5;" target="_blank" href="mailto:' +
+            person.email +
+            '"><i class="fa fa-envelope" style="font-size:16px"></i></a>'
+          : "") +
+        "</div></div>",
       iconSize: [30, 30],
       backgroundImage: person.image,
     },
@@ -47,87 +204,11 @@ people.forEach((person) => {
 const geojson = {
   type: "FeatureCollection",
   features: features,
-
-  // [
-  // {
-  // 'type': 'Feature',
-  // 'properties': {
-
-  // 'message': '<div style="display: flex; text-align: center; align-items: center; flex-direction: column; padding: 3%; bottom-margin: 0%"><div style="display:flex; flex-direction:row; width:100%; justify-content: center"><img src="https://media-exp1.licdn.com/dms/image/C5603AQHTf7seMbDNmA/profile-displayphoto-shrink_200_200/0/1589547516697?e=2147483647&v=beta&t=26TzmkFT4-OxGGiuetF2wWFQXdWQiZOuG-q7w2xMWb4" height="20px" width="20px" style="border-radius: 50%; margin-right: 2%"><strong style="font-size:12px">Raghav Gupta</strong></div>London, UK | Grad\'22<p style="margin-bottom: 0">He is a software developer at Hudson River Trading since August 15, 2022</p></div>',
-  // 'iconSize': [30, 30],
-  // 'backgroundImage':'https://media-exp1.licdn.com/dms/image/C5603AQHTf7seMbDNmA/profile-displayphoto-shrink_200_200/0/1589547516697?e=2147483647&v=beta&t=26TzmkFT4-OxGGiuetF2wWFQXdWQiZOuG-q7w2xMWb4'
-  // },
-  // 'geometry': {
-  // 'type': 'Point',
-  // 'coordinates': [-66.324462, -16.024695]
-  // }
-  // },
-  // {
-  // 'type': 'Feature',
-  // 'properties': {
-  // 'message': '<div style="display: flex; text-align: center; align-items: center; flex-direction: column; padding: 3%; bottom-margin: 0%"><div style="display:flex; flex-direction:row; width:100%; justify-content: center"><img src="https://media-exp1.licdn.com/dms/image/C4D03AQEq1n9pX5M2PQ/profile-displayphoto-shrink_200_200/0/1644541688346?e=1669248000&v=beta&t=yQQG96uLP698YvrD6nv0UFQ9vPuRHcmx2OABEY84xc0" height="20px" width="20px" style="border-radius: 50%; margin-right: 2%"><strong style="font-size:12px">Daksh Shah</strong></div>London, UK | Grad\'21<p style="margin-bottom: 0">He is a software engineer at Bloomberg since July 15, 2021</p></div>',
-  // 'iconSize': [30, 30],
-  // 'backgroundImage':'https://media-exp1.licdn.com/dms/image/C4D03AQEq1n9pX5M2PQ/profile-displayphoto-shrink_200_200/0/1644541688346?e=1669248000&v=beta&t=yQQG96uLP698YvrD6nv0UFQ9vPuRHcmx2OABEY84xc0'
-  // },
-  // 'geometry': {
-  // 'type': 'Point',
-  // 'coordinates': [-1.237647, 51.907322]
-  // }
-  // },
-  // {
-  // 'type': 'Feature',
-  // 'properties': {
-  // 'message': 'Bar',
-  // 'iconSize': [30, 30],
-  // 'backgroundImage':'https://media-exp1.licdn.com/dms/image/C5603AQHzXWeqwEVfkg/profile-displayphoto-shrink_800_800/0/1619019109102?e=2147483647&v=beta&t=uT_Ujt8zrjY6C9ilO5m03ysiBAN8mlR9-ptf6PR-KRg'
-  // },
-  // 'geometry': {
-  // 'type': 'Point',
-  // 'coordinates': [-0.127647, 51.507322]
-  // }
-  // },{
-  // 'type': 'Feature',
-  // 'properties': {
-  // 'message': 'Bar',
-  // 'iconSize': [30, 30],
-  // 'backgroundImage':'https://assets.fireside.fm/file/fireside-images/podcasts/images/2/2458fe79-416d-4b6a-993b-ec023bf6f0d3/guests/2/2bc2d8da-8924-48d8-a308-37febb647327/avatar_small.jpg?v=0'
-  // },
-  // 'geometry': {
-  // 'type': 'Point',
-  // 'coordinates': [11.575382, 48.137108]
-  // }
-  // },
-  // {
-  // 'type': 'Feature',
-  // 'properties': {
-  // 'message': 'hello?',
-  // 'iconSize': [30, 30],
-  // 'backgroundImage':'https://assets.fireside.fm/file/fireside-images/podcasts/images/2/2458fe79-416d-4b6a-993b-ec023bf6f0d3/guests/2/2bc2d8da-8924-48d8-a308-37febb647327/avatar_small.jpg?v=0'
-  // },
-  // 'geometry': {
-  // 'type': 'Point',
-  // 'coordinates': [6.129799, 49.611277]
-  // }
-  // },
-  // {
-  // 'type': 'Feature',
-  // 'properties': {
-  // 'message': 'Baz',
-  // 'iconSize': [30, 30],
-  // 'backgroundImage':'https://i.natgeofe.com/k/75ac774d-e6c7-44fa-b787-d0e20742f797/giant-panda-eating_3x2.jpg'
-  // },
-  // 'geometry': {
-  // 'type': 'Point',
-  // 'coordinates': [77.5913, 12.97912]
-
-  // }
-  // }
-  // ]
 };
 const map = new mapboxgl.Map({
   container: "map",
-  zoom: 1.5,
-  center: [-90, 40],
+  zoom: 2,
+  center: [60, 30],
   // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
   // style: 'mapbox://styles/mapbox/outdoors-v11',
   style: "mapbox://styles/spacspade/cl8ri7i4q002814t5pwfrche0",
@@ -225,10 +306,6 @@ for (const marker of geojson.features) {
   el.style.width = `${width}px`;
   el.style.height = `${height}px`;
   el.style.backgroundSize = "100%";
-
-  el.addEventListener("click", () => {
-    document.getElementById("info-box").innerHTML = `You clicked ${cityname}!`;
-  });
 
   // Add markers to the map.
   new mapboxgl.Marker(el)

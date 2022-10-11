@@ -10,6 +10,7 @@
       href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
 body { margin: 0; padding: 0; }
@@ -30,8 +31,13 @@ border: solid 2px white;
 padding: 0.3%;
 z-index: 100;
 }
+.leaflet-bottom, .leaflet-top {
+    z-index: 0 !important; 
+    position: absolute;
+    pointer-events: none;
+}
 
-.mapbox-logo{ display: none; } .mapboxgl-ctrl-logo { display: none !important; } .mapbox-improve-map { display: none; } .mapboxgl-ctrl-compass { display: none; }
+.mapbox-logo{ display: none; } .mapboxgl-ctrl-bottom-right{display: none !important;}.mapboxgl-ctrl-logo { display: none !important; } .mapbox-improve-map { display: none; } .mapboxgl-ctrl-compass { display: none; }
 
 #btn-spin {
         font: bold 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
