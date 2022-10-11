@@ -4,12 +4,15 @@ const people = [
   {
     name: "{Name}",
     location: "{City}, {Country}",
-    batch: "{B.Tech 20XX}",
+    batch: "{Grad'18}",
     coordinates: [-70, -20],
-    image:
-      "https://forumassets.hypixel.net/data/avatars/h/1528/1528563.jpg?1619726783",
+    image: "url('Assets/Profiles/AneeshaLakra.jpeg')",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    linkedin: "false",
+    twitter: "false",
+    instagram: "https://www.instagram.com/",
+    email: "false",
   },
 ];
 let features = [];
@@ -28,7 +31,10 @@ people.forEach((person) => {
         person.batch +
         '<p style="margin-bottom: 0">' +
         person.description +
-        "</p></div>",
+        '</p><a style="text-decoration:none; outline:none; padding: 1%; margin-top: 5%; opacity: .7;" target="_blank" href=' +
+        person.instagram +
+        '><img src="https://cdn-icons-png.flaticon.com/512/87/87390.png" height="15px" width="15px" style=""></a>' +
+        "</div>",
       iconSize: [30, 30],
       backgroundImage: person.image,
     },
