@@ -162,7 +162,7 @@ const people = [
     linkedin: "",
     twitter: "",
     instagram: "garvitaa_jain",
-    email: "sejal@cs.toronto.edu",
+    email: "",
   },
 ];
 
