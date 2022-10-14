@@ -152,7 +152,22 @@ const people = [
     instagram: "",
     email: "sejal@cs.toronto.edu",
   },
+  {
+    name: "Garvita Jain",
+    location: "Hyderabad, India",
+    batch: "Grad'22",
+    coordinates: [78.474061, 17.360589],
+    image: "Assets/Profiles/GarvitaJain.jpg",
+    description: " is a Tech Analyst at Goldman Sachs since July 4, 2022",
+    linkedin: "",
+    twitter: "",
+    instagram: "garvitaa_jain",
+    email: "sejal@cs.toronto.edu",
+  },
 ];
+
+//Get coordinates - https://docs.mapbox.com/playground/geocoding/
+
 let features = [];
 people.forEach((person) => {
   features.push({
