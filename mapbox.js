@@ -164,6 +164,82 @@ const people = [
     instagram: "garvitaa_jain",
     email: "",
   },
+  {
+    name: "Manavjeet Singh",
+    location: "Stony Brook, New York, USA",
+    batch: "Grad'22",
+    coordinates: [-73.140943, 40.925654],
+    image: "Assets/Profiles/ManavjeetSingh.jpg",
+    description:
+      " is a PhD student at Stony Brook University since August 22, 2022",
+    linkedin: "",
+    twitter: "",
+    instagram: "",
+    email: "manavsingh@cs.stonybrook.edu",
+  },
+  {
+    name: "Prashansa Tanwar",
+    location: "Singapore",
+    batch: "Grad'22",
+    coordinates: [103.863599237392, 1.29986935],
+    image: "Assets/Profiles/PrashansaTanwar.jpg",
+    description: " is a Software Developer at Osttra since November 1, 2022",
+    linkedin: "https://www.linkedin.com/in/prashansa-tanwar/",
+    twitter: "",
+    instagram: "",
+    email: "",
+  },
+  {
+    name: "Saksham Dhull",
+    location: "Bangalore, India",
+    batch: "Grad'22",
+    coordinates: [77.5913, 12.97912],
+    image: "Assets/Profiles/SakshamDhull.jpg",
+    description: " is a Software Developer at Oracle since June 22, 2022",
+    linkedin: "https://www.linkedin.com/in/sakshamdhull",
+    twitter: "@Bloop__Doop",
+    instagram: "@saksham_dhull",
+    email: "saksham18186@iiitd.ac.in",
+  },
+  {
+    name: "Dhruv Yadav",
+    location: "Jaipur, India",
+    batch: "Grad'22",
+    coordinates: [75.818982, 26.915458],
+    image: "Assets/Profiles/DhruvYadav.jpg",
+    description:
+      " is a Game Designer and Developer at Ohilo since January 14, 2022",
+    linkedin: "https://www.linkedin.com/in/dhruv-yadav-0764371b1/",
+    twitter: "",
+    instagram: "",
+    email: "dhruvyadav0109@gmail.com",
+  },
+  {
+    name: "Neelabhro Roy",
+    location: "Stockholm, Sweden",
+    batch: "Grad'20",
+    coordinates: [18.071093, 59.325117],
+    image: "Assets/Profiles/NeelabhroRoy.jpg",
+    description:
+      " is a PhD candidate at KTH Royal Institute of Technology since October 14, 2020",
+    linkedin: "",
+    twitter: "",
+    instagram: "",
+    email: "nroy@kth.se",
+  },
+  {
+    name: "Aditya Bhadoo",
+    location: "Bangalore, India",
+    batch: "Grad'21",
+    coordinates: [77.5913, 12.97912],
+    image: "Assets/Profiles/AdityaBhadoo.jpeg",
+    description:
+      " is a Site Reliability Engineer at Media.net since July 19, 2021",
+    linkedin: "https://www.linkedin.com/in/aditya-bhadoo-588b79229/",
+    twitter: "",
+    instagram: "",
+    email: "aditya17008@iiitd.ac.in",
+  },
 ];
 
 //Get coordinates - https://docs.mapbox.com/playground/geocoding/
@@ -216,6 +292,9 @@ people.forEach((person) => {
     },
   });
 });
+
+//----------------------------------------------------------------------------------------
+
 const geojson = {
   type: "FeatureCollection",
   features: features,
@@ -306,6 +385,114 @@ document.getElementById("btn-spin").addEventListener("click", (e) => {
 });
 
 spinGlobe();
+
+//----------------------------------------------------------------------------------------
+// const filterGroup = document.getElementById("filter-group");
+
+//filtering markers
+// people.forEach((feature) => {
+//   const symbol = feature.batch;
+//   const layerID = `poi-${symbol}`;
+
+//   // Add a layer for this symbol type if it hasn't been added already.
+//   if (!map.getLayer(layerID)) {
+//     map.addLayer({
+//       id: layerID,
+//       type: "Feature",
+//       source: "people",
+//       layout: {
+//         // These icons are a part of the Mapbox Light style.
+//         // To view all images available in a Mapbox style, open
+//         // the style in Mapbox Studio and click the "Images" tab.
+//         // To add a new image to the style at runtime see
+//         // https://docs.mapbox.com/mapbox-gl-js/example/add-image/
+//         "icon-image": `cat`,
+//         "icon-allow-overlap": true,
+//       },
+//       filter: ["==", "icon", symbol],
+//     });
+
+//     // Add checkbox and label elements for the layer.
+//     const input = document.createElement("input");
+//     input.type = "checkbox";
+//     input.id = layerID;
+//     input.checked = true;
+//     filterGroup.appendChild(input);
+
+//     const label = document.createElement("label");
+//     label.setAttribute("for", layerID);
+//     label.textContent = symbol;
+//     filterGroup.appendChild(label);
+//   }
+// });
+
+// When the checkbox changes, update the visibility of the layer.
+// input.addEventListener("change", (e) => {
+//   map.setLayoutProperty(
+//     layerID,
+//     "visibility",
+//     e.target.checked ? "visible" : "none"
+//   );
+// });
+
+// Find and store a variable reference to the list of filters.
+// var filters = document.getElementById("filters");
+
+// // Wait until the marker layer is loaded in order to build a list of possible
+// // types. If you are doing this with another featureLayer, you should change
+// // map.featureLayer to the variable you have assigned to your featureLayer.
+// var makeCheckboxes = function () {
+//   // Collect the types of symbols in this layer. you can also just
+//   // hardcode an array of types if you know what you want to filter on,
+//   // like var types = ['foo', 'bar'];
+//   var typesObj = {},
+//     types = [];
+
+//   map.featureLayer.eachLayer(function (entity) {
+//     typesObj[entity.properties.batch] = true;
+//   });
+//   for (var k in typesObj) types.push(k);
+
+//   var checkboxes = [];
+//   // Create a filter interface.
+//   for (var i = 0; i < types.length; i++) {
+//     // Create an an input checkbox and label inside.
+//     var item = filters.appendChild(document.createElement("div"));
+//     var checkbox = item.appendChild(document.createElement("input"));
+//     var label = item.appendChild(document.createElement("label"));
+//     checkbox.type = "checkbox";
+//     checkbox.id = types[i];
+//     checkbox.checked = true;
+//     // create a label to the right of the checkbox with explanatory text
+//     label.innerHTML = types[i];
+//     label.setAttribute("for", types[i]);
+//     // Whenever a person clicks on this checkbox, call the update().
+//     checkbox.addEventListener("change", update);
+//     checkboxes.push(checkbox);
+//   }
+
+//   // This function is called whenever someone clicks on a checkbox and changes
+//   // the selection of markers to be displayed.
+//   function update() {
+//     var enabled = {};
+//     // Run through each checkbox and record whether it is checked. If it is,
+//     // add it to the object of types to display, otherwise do not.
+//     for (var i = 0; i < checkboxes.length; i++) {
+//       if (checkboxes[i].checked) enabled[checkboxes[i].id] = true;
+//     }
+//     map.featureLayer.setFilter(function (feature) {
+//       // If this symbol is in the list, return true. if not, return false.
+//       // The 'in' operator in javascript does exactly that: given a string
+//       // or number, it says if that is in a object.
+//       // 2 in { 2: true } // true
+//       // 2 in { } // false
+//       return feature.properties.batch in enabled;
+//     });
+//   }
+// };
+// makeCheckboxes();
+
+//----------------------------------------------------------------------------------------
 
 // Add markers to the map.
 for (const marker of geojson.features) {
