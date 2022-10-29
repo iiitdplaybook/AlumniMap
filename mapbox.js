@@ -414,53 +414,6 @@ for (const marker of geojson.features) {
 }
 
 //----------------------------------------------------------------------------------------
-// const filterGroup = document.getElementById("filter-group");
-
-//filtering markers
-// people.forEach((feature) => {
-//   const symbol = feature.batch;
-//   const layerID = `poi-${symbol}`;
-
-//   // Add a layer for this symbol type if it hasn't been added already.
-//   if (!map.getLayer(layerID)) {
-//     map.addLayer({
-//       id: layerID,
-//       type: "Feature",
-//       source: "people",
-//       layout: {
-//         // These icons are a part of the Mapbox Light style.
-//         // To view all images available in a Mapbox style, open
-//         // the style in Mapbox Studio and click the "Images" tab.
-//         // To add a new image to the style at runtime see
-//         // https://docs.mapbox.com/mapbox-gl-js/example/add-image/
-//         "icon-image": `cat`,
-//         "icon-allow-overlap": true,
-//       },
-//       filter: ["==", "icon", symbol],
-//     });
-
-//     // Add checkbox and label elements for the layer.
-//     const input = document.createElement("input");
-//     input.type = "checkbox";
-//     input.id = layerID;
-//     input.checked = true;
-//     filterGroup.appendChild(input);
-
-//     const label = document.createElement("label");
-//     label.setAttribute("for", layerID);
-//     label.textContent = symbol;
-//     filterGroup.appendChild(label);
-//   }
-// });
-
-// When the checkbox changes, update the visibility of the layer.
-// input.addEventListener("change", (e) => {
-//   map.setLayoutProperty(
-//     layerID,
-//     "visibility",
-//     e.target.checked ? "visible" : "none"
-//   );
-// });
 
 // Find and store a variable reference to the list of filters.
 var filters = document.getElementById("filters");
@@ -477,7 +430,9 @@ var makeCheckboxes = function () {
   // var typesObj = {},
 
   for (var k in typesObj) types.push(k);
-  console.log("hell", types);
+  // console.log("hell", types);
+
+  document.getElementById("numberResults").innerHTML = features.length;
 
   var checkboxes = [];
   // Create a filter interface.
@@ -509,17 +464,23 @@ var makeCheckboxes = function () {
       //else enabled[] = false, then for false ones remove visibility and trues ones set visibility
     }
 
+    var counter = 0;
     // const filterList = Object.keys(enabled); already collected in 'types' list
     for (let i = 0; i < types.length; i++) {
       temp = types[i];
       let markers = document.getElementsByClassName(temp);
-      console.log(types, markers);
+      // console.log(types, markers);
       for (let j = 0; j < markers.length; j++) {
         if (!enabled[temp]) markers[j].style.visibility = "hidden";
-        else markers[j].style.visibility = "visible";
+        else {
+          markers[j].style.visibility = "visible";
+          counter = counter + 1;
+        }
       }
     }
 
+    // console.log(counter);
+    document.getElementById("numberResults").innerHTML = counter;
     // console.log(markers.matches("Grad'22"));
     // for (let i = 0; i < markers.length; i++) {
     //   markers.markers0[i].style.visibility = "hidden";
