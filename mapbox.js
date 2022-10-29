@@ -54,7 +54,7 @@ const people = [
   {
     name: "Sahil Yadav",
     location: "Delhi, India",
-    batch: "Grad'22",
+    batch: "Grad'20",
     coordinates: [77.21667, 28.66667],
     image: "Assets/Profiles/SahilYadav.jpeg",
     description:
@@ -104,7 +104,7 @@ const people = [
   {
     name: "Anushka Bhandari",
     location: "Amsterdam, Netherlands",
-    batch: "Grad'22",
+    batch: "Grad'20",
     coordinates: [4.893604, 52.37276],
     image: "Assets/Profiles/AnushkaBhandari.jpg",
     description:
@@ -117,7 +117,7 @@ const people = [
   {
     name: "Arpit Bhatia",
     location: "Copenhagen, Denmark",
-    batch: "Grad'22",
+    batch: "Grad'20",
     coordinates: [12.570072, 55.686724],
     image: "Assets/Profiles/ArpitBhatia.png",
     description:
@@ -142,7 +142,7 @@ const people = [
   {
     name: "Sejal Bhalla",
     location: "Toronto, Canada",
-    batch: "Grad'22",
+    batch: "Grad'21",
     coordinates: [-79.383935, 43.653482],
     image: "Assets/Profiles/SejalBhalla.jpeg",
     description:
@@ -249,6 +249,7 @@ people.forEach((person) => {
   features.push({
     type: "Feature",
     properties: {
+      filter: person.batch,
       message:
         '<div style="display: flex; text-align: center; align-items: center; flex-direction: column; padding: 3%; bottom-margin: 0%"><div style="display:flex; flex-direction:row; width:100%; justify-content: center"><img src=' +
         person.image +
@@ -386,6 +387,32 @@ document.getElementById("btn-spin").addEventListener("click", (e) => {
 
 spinGlobe();
 
+var typesObj = {};
+
+// Add markers to the map.
+for (const marker of geojson.features) {
+  // Create a DOM element for each marker.
+  const el = document.createElement("div");
+  const width = marker.properties.iconSize[0];
+  const height = marker.properties.iconSize[1];
+  const description = marker.properties.message;
+  const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`${description}`);
+  el.className = "marker " + `${marker.properties.filter}`;
+  // el.style.backgroundImage = `url(https://placekitten.com/g/${width}/${height}/)`;
+  el.style.backgroundImage = `url(${marker.properties.backgroundImage})`;
+  el.style.width = `${width}px`;
+  el.style.height = `${height}px`;
+  el.style.backgroundSize = "100%";
+
+  typesObj[marker.properties.filter] = true;
+
+  // Add markers to the map.
+  new mapboxgl.Marker(el)
+    .setLngLat(marker.geometry.coordinates)
+    .setPopup(popup)
+    .addTo(map);
+}
+
 //----------------------------------------------------------------------------------------
 // const filterGroup = document.getElementById("filter-group");
 
@@ -436,82 +463,79 @@ spinGlobe();
 // });
 
 // Find and store a variable reference to the list of filters.
-// var filters = document.getElementById("filters");
+var filters = document.getElementById("filters");
 
-// // Wait until the marker layer is loaded in order to build a list of possible
-// // types. If you are doing this with another featureLayer, you should change
-// // map.featureLayer to the variable you have assigned to your featureLayer.
-// var makeCheckboxes = function () {
-//   // Collect the types of symbols in this layer. you can also just
-//   // hardcode an array of types if you know what you want to filter on,
-//   // like var types = ['foo', 'bar'];
-//   var typesObj = {},
-//     types = [];
+// Wait until the marker layer is loaded in order to build a list of possible
+// types. If you are doing this with another featureLayer, you should change
+// map.featureLayer to the variable you have assigned to your featureLayer.
+var types = [];
 
-//   map.featureLayer.eachLayer(function (entity) {
-//     typesObj[entity.properties.batch] = true;
-//   });
-//   for (var k in typesObj) types.push(k);
+var makeCheckboxes = function () {
+  // Collect the types of symbols in this layer. you can also just
+  // hardcode an array of types if you know what you want to filter on,
+  // like var types = ['foo', 'bar'];
+  // var typesObj = {},
 
-//   var checkboxes = [];
-//   // Create a filter interface.
-//   for (var i = 0; i < types.length; i++) {
-//     // Create an an input checkbox and label inside.
-//     var item = filters.appendChild(document.createElement("div"));
-//     var checkbox = item.appendChild(document.createElement("input"));
-//     var label = item.appendChild(document.createElement("label"));
-//     checkbox.type = "checkbox";
-//     checkbox.id = types[i];
-//     checkbox.checked = true;
-//     // create a label to the right of the checkbox with explanatory text
-//     label.innerHTML = types[i];
-//     label.setAttribute("for", types[i]);
-//     // Whenever a person clicks on this checkbox, call the update().
-//     checkbox.addEventListener("change", update);
-//     checkboxes.push(checkbox);
-//   }
+  for (var k in typesObj) types.push(k);
+  console.log("hell", types);
 
-//   // This function is called whenever someone clicks on a checkbox and changes
-//   // the selection of markers to be displayed.
-//   function update() {
-//     var enabled = {};
-//     // Run through each checkbox and record whether it is checked. If it is,
-//     // add it to the object of types to display, otherwise do not.
-//     for (var i = 0; i < checkboxes.length; i++) {
-//       if (checkboxes[i].checked) enabled[checkboxes[i].id] = true;
-//     }
-//     map.featureLayer.setFilter(function (feature) {
-//       // If this symbol is in the list, return true. if not, return false.
-//       // The 'in' operator in javascript does exactly that: given a string
-//       // or number, it says if that is in a object.
-//       // 2 in { 2: true } // true
-//       // 2 in { } // false
-//       return feature.properties.batch in enabled;
-//     });
-//   }
-// };
-// makeCheckboxes();
+  var checkboxes = [];
+  // Create a filter interface.
+  for (var i = 0; i < types.length; i++) {
+    // Create an an input checkbox and label inside.
+    var item = filters.appendChild(document.createElement("div"));
+    var checkbox = item.appendChild(document.createElement("input"));
+    var label = item.appendChild(document.createElement("label"));
+    checkbox.type = "checkbox";
+    checkbox.id = types[i];
+    checkbox.checked = true;
+    // create a label to the right of the checkbox with explanatory text
+    label.innerHTML = types[i];
+    label.setAttribute("for", types[i]);
+    // Whenever a person clicks on this checkbox, call the update().
+    checkbox.addEventListener("change", update);
+    checkboxes.push(checkbox);
+  }
+
+  // This function is called whenever someone clicks on a checkbox and changes
+  // the selection of markers to be displayed.
+  function update() {
+    var enabled = {};
+    // Run through each checkbox and record whether it is checked. If it is,
+    // add it to the object of types to display, otherwise do not.
+    for (var i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].checked) enabled[checkboxes[i].id] = true;
+      else enabled[checkboxes[i].id] = false;
+      //else enabled[] = false, then for false ones remove visibility and trues ones set visibility
+    }
+
+    // const filterList = Object.keys(enabled); already collected in 'types' list
+    for (let i = 0; i < types.length; i++) {
+      temp = types[i];
+      let markers = document.getElementsByClassName(temp);
+      console.log(types, markers);
+      for (let j = 0; j < markers.length; j++) {
+        if (!enabled[temp]) markers[j].style.visibility = "hidden";
+        else markers[j].style.visibility = "visible";
+      }
+    }
+
+    // console.log(markers.matches("Grad'22"));
+    // for (let i = 0; i < markers.length; i++) {
+    //   markers.markers0[i].style.visibility = "hidden";
+    // }
+
+    // for (const marker of geojson.features) {
+    //   // Create a DOM element for each marker.
+    //   const el = document.createElement("div");
+
+    //   typesObj[marker.properties.filter] = false;
+
+    //   // Add markers to the map.
+    //   el.remove();
+    // }
+  }
+};
+makeCheckboxes();
 
 //----------------------------------------------------------------------------------------
-
-// Add markers to the map.
-for (const marker of geojson.features) {
-  // Create a DOM element for each marker.
-  const el = document.createElement("div");
-  const width = marker.properties.iconSize[0];
-  const height = marker.properties.iconSize[1];
-  const description = marker.properties.message;
-  const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`${description}`);
-  el.className = "marker";
-  // el.style.backgroundImage = `url(https://placekitten.com/g/${width}/${height}/)`;
-  el.style.backgroundImage = `url(${marker.properties.backgroundImage})`;
-  el.style.width = `${width}px`;
-  el.style.height = `${height}px`;
-  el.style.backgroundSize = "100%";
-
-  // Add markers to the map.
-  new mapboxgl.Marker(el)
-    .setLngLat(marker.geometry.coordinates)
-    .setPopup(popup)
-    .addTo(map);
-}
