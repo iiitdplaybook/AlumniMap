@@ -3,34 +3,19 @@ mapboxgl.accessToken =
 const people = [
   {
     name: "Aneesha Lakra",
-    domain: "Higher Studies",
     location: "Seattle, USA",
     batch: "Grad'22",
     coordinates: [-122.330062, 47.603832],
     image: "Assets/Profiles/AneeshaLakra.jpeg",
     description:
-      " is a Masters student (HCI) at University of Washington since September 28, 2022",
+      " is a Masters student at University of Washington since September 28, 2022",
     linkedin: "https://www.linkedin.com/in/aneeshalakra",
     twitter: "",
     instagram: "",
     email: "",
   },
   {
-    name: "Sumanyu Bhatia",
-    domain: "CS Engineering",
-    location: "Gurgaon, India",
-    batch: "Grad'22",
-    coordinates: [77.029919, 28.564615],
-    image: "Assets/Profiles/SumanyuBhatia.jpeg",
-    description: " is a Software Developer at DP World since July 1, 2022",
-    linkedin: "http://www.linkedin.com/in/sumanyubhatia",
-    twitter: "",
-    instagram: "sumanyubhatia",
-    email: "sumanyu18106@iiitd.ac.in",
-  },
-  {
     name: "Navneet Agarwal",
-    domain: "CS Engineering",
     location: "Gurgaon, India",
     batch: "Grad'22",
     coordinates: [77.029919, 28.464615],
@@ -43,7 +28,6 @@ const people = [
   },
   {
     name: "Himanshu Raj",
-    domain: "CS Engineering",
     location: "Dublin, Ireland",
     batch: "Grad'22",
     coordinates: [-6.26583, 53.3425],
@@ -56,10 +40,9 @@ const people = [
   },
   {
     name: "Raghav Gupta",
-    domain: "CS Engineering",
     location: "London, UK",
     batch: "Grad'22",
-    coordinates: [0.127647, 51.507322],
+    coordinates: [-0.127647, 51.507322],
     image: "Assets/Profiles/RaghavGupta.jpg",
     description:
       " is a Software Engineer at Hudson River Trading since August 15, 2022",
@@ -69,21 +52,7 @@ const people = [
     email: "raghav18076@iiitd.ac.in",
   },
   {
-    name: "Daksh Shah",
-    domain: "CS Engineering",
-    location: "London, UK",
-    batch: "Grad'21",
-    coordinates: [-0.227647, 51.507322],
-    image: "Assets/Profiles/DakshShah.jpeg",
-    description: " is a Software Engineer at Bloomberg since June 1, 2021",
-    linkedin: "",
-    twitter: "",
-    instagram: "",
-    email: "daksh17336@iiitd.ac.in",
-  },
-  {
     name: "Sahil Yadav",
-    domain: "Design",
     location: "Delhi, India",
     batch: "Grad'20",
     coordinates: [77.21667, 28.66667],
@@ -97,7 +66,6 @@ const people = [
   },
   {
     name: "Smera Goel",
-    domain: "Design",
     location: "Berlin, Germany",
     batch: "Grad'22",
     coordinates: [13.38333, 52.51667],
@@ -110,7 +78,6 @@ const people = [
   },
   {
     name: "Kshitij Agrawal",
-    domain: "Design",
     location: "London, UK",
     batch: "Grad'22",
     coordinates: [-0.127647, 51.507322],
@@ -123,7 +90,6 @@ const people = [
   },
   {
     name: "Vishesh Agrawal",
-    domain: "Higher Studies",
     location: "Los Angeles, USA",
     batch: "Grad'22",
     coordinates: [-118.242766, 34.053691],
@@ -137,7 +103,6 @@ const people = [
   },
   {
     name: "Anushka Bhandari",
-    domain: "CS Engineering",
     location: "Amsterdam, Netherlands",
     batch: "Grad'20",
     coordinates: [4.893604, 52.37276],
@@ -151,7 +116,6 @@ const people = [
   },
   {
     name: "Arpit Bhatia",
-    domain: "Higher Studies",
     location: "Copenhagen, Denmark",
     batch: "Grad'20",
     coordinates: [12.570072, 55.686724],
@@ -165,7 +129,6 @@ const people = [
   },
   {
     name: "Anshul Mendiratta",
-    domain: "Higher Studies",
     location: "Texas, United States",
     batch: "Grad'22",
     coordinates: [-94.917549, 29.396013],
@@ -178,7 +141,6 @@ const people = [
   },
   {
     name: "Sejal Bhalla",
-    domain: "Higher Studies",
     location: "Toronto, Canada",
     batch: "Grad'21",
     coordinates: [-79.383935, 43.653482],
@@ -191,21 +153,7 @@ const people = [
     email: "sejal@cs.toronto.edu",
   },
   {
-    name: "Rishabh Chauhan",
-    domain: "CS Engineering",
-    location: "Hyderabad, India",
-    batch: "Grad'22",
-    coordinates: [78.074061, 17.360589],
-    image: "Assets/Profiles/RishabhChauhan.jpg",
-    description: " is a Software Developer at Microsoft since May 23, 2022",
-    linkedin: "https://www.linkedin.com/in/prathamguptaaa",
-    twitter: "",
-    instagram: "r1sha6h",
-    email: "rishabh18256@iiitd.ac.in",
-  },
-  {
     name: "Garvita Jain",
-    domain: "CS Engineering",
     location: "Hyderabad, India",
     batch: "Grad'22",
     coordinates: [78.474061, 17.360589],
@@ -218,7 +166,6 @@ const people = [
   },
   {
     name: "Manavjeet Singh",
-    domain: "Higher Studies",
     location: "Stony Brook, New York, USA",
     batch: "Grad'22",
     coordinates: [-73.140943, 40.925654],
@@ -232,7 +179,6 @@ const people = [
   },
   {
     name: "Prashansa Tanwar",
-    domain: "CS Engineering",
     location: "Singapore",
     batch: "Grad'22",
     coordinates: [103.863599237392, 1.29986935],
@@ -245,10 +191,9 @@ const people = [
   },
   {
     name: "Saksham Dhull",
-    domain: "CS Engineering",
     location: "Bangalore, India",
     batch: "Grad'22",
-    coordinates: [77.8913, 12.97912],
+    coordinates: [77.5913, 12.97912],
     image: "Assets/Profiles/SakshamDhull.jpg",
     description: " is a Software Developer at Oracle since June 22, 2022",
     linkedin: "https://www.linkedin.com/in/sakshamdhull",
@@ -258,7 +203,6 @@ const people = [
   },
   {
     name: "Dhruv Yadav",
-    domain: "Design",
     location: "Jaipur, India",
     batch: "Grad'22",
     coordinates: [75.818982, 26.915458],
@@ -272,7 +216,6 @@ const people = [
   },
   {
     name: "Neelabhro Roy",
-    domain: "Higher Studies",
     location: "Stockholm, Sweden",
     batch: "Grad'20",
     coordinates: [18.071093, 59.325117],
@@ -286,7 +229,6 @@ const people = [
   },
   {
     name: "Aditya Bhadoo",
-    domain: "CS Engineering",
     location: "Bangalore, India",
     batch: "Grad'21",
     coordinates: [77.5913, 12.97912],
@@ -298,46 +240,6 @@ const people = [
     instagram: "",
     email: "aditya17008@iiitd.ac.in",
   },
-  {
-    name: "Sonali Supriya",
-    domain: "Design",
-    location: "Delhi, India",
-    batch: "Grad'22",
-    coordinates: [77.01667, 28.66667],
-    image: "Assets/Profiles/SonaliSupriya.JPG",
-    description: " is a Experience Designer at Jio since June 6, 2022",
-    linkedin: "https://www.linkedin.com/in/sonali-supriya-9b11071a5",
-    twitter: "",
-    instagram: "sonalisupriyaa",
-    email: "sonali18318@iiitd.ac.in",
-  },
-  {
-    name: "Ritwik Kar",
-    domain: "Management",
-    location: "Mumbai, India",
-    batch: "Grad'22",
-    coordinates: [72.877393, 19.07599],
-    image: "Assets/Profiles/RitwikKar.jpg",
-    description:
-      " is a Associate Product Manager at IDFC First Bank since July 18, 2022",
-    linkedin: "https://www.linkedin.com/in/ritwikkar",
-    twitter: "KuchAlagKar",
-    instagram: "",
-    email: "",
-  },
-  {
-    name: "Pratham Gupta",
-    domain: "CS Engineering",
-    location: "Delhi, India",
-    batch: "Grad'22",
-    coordinates: [77.11667, 28.66667],
-    image: "Assets/Profiles/PrathamGupta.jpeg",
-    description: " is a Software Developer at Paytm since June 1, 2022",
-    linkedin: "https://www.linkedin.com/in/prathamguptaaa",
-    twitter: "",
-    instagram: "prathamguptaaa",
-    email: "pratham.gupta2k@gmail.com",
-  },
 ];
 
 //Get coordinates - https://docs.mapbox.com/playground/geocoding/
@@ -347,7 +249,7 @@ people.forEach((person) => {
   features.push({
     type: "Feature",
     properties: {
-      filter: person.domain,
+      filter: person.batch,
       message:
         '<div style="display: flex; text-align: center; align-items: center; flex-direction: column; padding: 3%; bottom-margin: 0%"><div style="display:flex; flex-direction:row; width:100%; justify-content: center"><img src=' +
         person.image +
