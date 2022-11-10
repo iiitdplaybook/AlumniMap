@@ -441,49 +441,49 @@ function spinGlobe() {
   }
 }
 
-// Pause spinning on interaction
-map.on("mousedown", () => {
-  userInteracting = true;
-});
+// // Pause spinning on interaction
+// map.on("mousedown", () => {
+//   userInteracting = true;
+// });
 
-// Restart spinning the globe when interaction is complete
-map.on("mouseup", () => {
-  userInteracting = false;
-  spinGlobe();
-});
+// // Restart spinning the globe when interaction is complete
+// map.on("mouseup", () => {
+//   userInteracting = false;
+//   spinGlobe();
+// });
 
-// These events account for cases where the mouse has moved
-// off the map, so 'mouseup' will not be fired.
-map.on("dragend", () => {
-  userInteracting = false;
-  spinGlobe();
-});
-map.on("pitchend", () => {
-  userInteracting = false;
-  spinGlobe();
-});
-map.on("rotateend", () => {
-  userInteracting = false;
-  spinGlobe();
-});
+// // These events account for cases where the mouse has moved
+// // off the map, so 'mouseup' will not be fired.
+// map.on("dragend", () => {
+//   userInteracting = false;
+//   spinGlobe();
+// });
+// map.on("pitchend", () => {
+//   userInteracting = false;
+//   spinGlobe();
+// });
+// map.on("rotateend", () => {
+//   userInteracting = false;
+//   spinGlobe();
+// });
 
-// When animation is complete, start spinning if there is no ongoing interaction
-map.on("moveend", () => {
-  spinGlobe();
-});
+// // When animation is complete, start spinning if there is no ongoing interaction
+// map.on("moveend", () => {
+//   spinGlobe();
+// });
 
-document.getElementById("btn-spin").addEventListener("click", (e) => {
-  spinEnabled = !spinEnabled;
-  if (spinEnabled) {
-    spinGlobe();
-    e.target.innerHTML = "Pause rotation";
-  } else {
-    map.stop(); // Immediately end ongoing animation
-    e.target.innerHTML = "Start rotation";
-  }
-});
+// document.getElementById("btn-spin").addEventListener("click", (e) => {
+//   spinEnabled = !spinEnabled;
+//   if (spinEnabled) {
+//     // spinGlobe();
+//     e.target.innerHTML = "Pause rotation";
+//   } else {
+//     map.stop(); // Immediately end ongoing animation
+//     e.target.innerHTML = "Start rotation";
+//   }
+// });
 
-spinGlobe();
+// spinGlobe();
 
 var typesObj = {};
 
@@ -536,7 +536,9 @@ var makeCheckboxes = function () {
   // Create a filter interface.
   for (var i = 0; i < types.length; i++) {
     // Create an an input checkbox and label inside.
-    var item = filters.appendChild(document.createElement("div"));
+    var filterListItem = document.createElement("div");
+    filterListItem.className = "filterListItem";
+    var item = filters.appendChild(filterListItem);
     var checkbox = item.appendChild(document.createElement("input"));
     var label = item.appendChild(document.createElement("label"));
     checkbox.type = "checkbox";
@@ -597,4 +599,24 @@ var makeCheckboxes = function () {
 };
 makeCheckboxes();
 
+//Trying to hide/show the filter column by clicking on X ALUMNS div
+//when trying again, add onclick="filterListStatus()" to div statement
+
+// var filterListStatus_ = true;
+// var filterlist_ = document.getElementsByClassName("filterListItem");
+
+// function filterListStatus() {
+//   if (filterListStatus) {
+//     for (var i = 0; i < filterlist_.length; i++) {
+//       filterlist_[i].style.visibility = "hidden";
+//     }
+//     filterListStatus_ = false;
+//   } else {
+//     console.log(filterlist_);
+//     for (var i = 0; i < filterlist_.length; i++) {
+//       filterlist_[i].style.visibility = "visible";
+//     }
+//     filterListStatus_ = true;
+//   }
+// }
 //----------------------------------------------------------------------------------------
